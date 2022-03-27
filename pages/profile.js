@@ -1,8 +1,7 @@
 import Axios from 'axios';
 import Image from 'next/image'
 
-export const EOM =({ profile }) =>{
-
+export const Profile =({ profile }) =>{
     return (
         <div className="page-container">
             <div>
@@ -32,4 +31,4 @@ export const getServerSideProps = async pageContext => {
 }
 
 
-export default EOM;
+export default Profile;
