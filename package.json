@@ -14,7 +14,12 @@
     "@mui/material": "^5.5.2",
     "@mui/styles": "^5.5.1",
     "axios": "^0.26.1",
-    "next": "12.1.1",
+    "grapesjs": "^0.18.4",
+    "grapesjs-blocks-basic": "^0.1.8",
+    "grapesjs-preset-newsletter": "^0.2.21",
+    "grapesjs-preset-webpage": "^0.1.11",
+    "grapesjs-react": "^4.0.1-alpha",
+    "next": "12.1.4",
     "next-i18next": "^10.5.0",
     "react": "17.0.2",
     "react-dom": "17.0.2"

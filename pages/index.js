@@ -5,9 +5,10 @@ import styles from '../styles/Home.module.css';
 
 function Home({ t }) {
   return (
-    <div className={styles.container}>
-      <Toolbar />
-      {t('hello')}
+    <div>
+      {/* <Toolbar />
+      {t('hello')} */}
+      home
     </div>
   );
 }
