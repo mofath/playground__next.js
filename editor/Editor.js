@@ -5,7 +5,6 @@ import gjsBasicBlocks from 'grapesjs-blocks-basic';
 import saveBtn from './buttons/save';
 import TextBlock from './blocks/text';
 
-// eslint-disable-next-line react/display-name
 const Editor = ({ children, id, width, height }) => {
   const loadEditor = () => {
     const editor = GrapesJS.init({
@@ -21,7 +20,6 @@ const Editor = ({ children, id, width, height }) => {
 
   useEffect(() => {
     loadEditor();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return <div id={id}>{children}</div>;

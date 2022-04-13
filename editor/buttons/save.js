@@ -1,4 +1,3 @@
-// eslint-disable-next-line import/no-anonymous-default-export
 export default {
   id: 'save',
   label: '<i class="fa fa-floppy-o"></i>',
