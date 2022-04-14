@@ -5,11 +5,11 @@ export default function () {
     type: 'remote',
     autosave: false,
     stepsBeforeSave: 10,
-    urlStore: 'config.urlStore',
-    urlLoad: 'config.urlLoad',
+    urlStore: config.urlStore,
+    urlLoad: config.urlLoad,
     params: {},
-    headers: {
-      'X-CSRF-TOKEN': 'APP.csrf_token',
-    },
+    // headers: {
+    //   'X-CSRF-TOKEN': 'APP.csrf_token',
+    // },
   };
 }

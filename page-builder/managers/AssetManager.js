@@ -4,7 +4,7 @@ import { __ } from '../lang/I18n';
 export default {
   getConfig: _ => {
     return {
-      upload: 'config.fileUpload',
+      upload: 'http://localhost:3000/api/uploads',
       headers: {
         'X-CSRF-TOKEN': 'APP.csrf_token',
       },

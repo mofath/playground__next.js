@@ -1,7 +1,7 @@
 import Axios from 'axios';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
-import { Toolbar } from '../../components/toolbar';
+import { Toolbar } from '../components/toolbar';
 import styles from '../../styles/Feed.module.css';
 
 export const Feed = ({ articles, pageNumber }) => {
