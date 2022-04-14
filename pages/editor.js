@@ -1,7 +1,7 @@
-import Editor from '../page-builder/Editor';
+import GrapesjsEditor from '../grapesjsEditor';
 
-function App() {
-  return <Editor id="gjs" width="100vw" height="100vh" />;
+function Editor() {
+  return <GrapesjsEditor id="gjs" width="100vw" height="100vh" />;
 }
 
-export default App;
+export default Editor;

@@ -1,9 +1,9 @@
 import { useEffect } from 'react';
-import GrapesjsBuilder from './grapesjsBuilder';
+import GrapesjsFactory from './GrapesjsFactory';
 
 const Editor = ({ id, width, height }) => {
   useEffect(() => {
-    new GrapesjsBuilder({
+    new GrapesjsFactory({
       lang: 'en',
       urlStore: 'http://localhost:3000/api/store',
       urlLoad: 'http://localhost:3000/api/store',

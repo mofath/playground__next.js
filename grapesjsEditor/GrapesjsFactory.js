@@ -51,7 +51,7 @@ import LineBreakType from './types/line-break';
 import ResponsiveVideoComponent from './plugins/ResponsiveVideo';
 import SimpleBlockType from './types/block';
 
-const GrapesjsBuilder = function (options) {
+const GrapesjsFactory = function (options) {
   const _self = this;
   _self.editor = null;
 
@@ -85,7 +85,7 @@ const GrapesjsBuilder = function (options) {
           // GrapesjsPresetwebpagePlugin,
         ],
         canvas: {
-          styles: [...config.styles, '/modules/cms/css/page-builder/canvas.css'],
+          styles: [...config.styles, '/modules/cms/css/editor/canvas.css'],
         },
         commands: {
           defaults: [...EditCodeCmd(), ...SetDevicesCmd, ...ShowPanels, ...UndoRedo],
@@ -202,4 +202,4 @@ const GrapesjsBuilder = function (options) {
   _init();
 };
 
-export default GrapesjsBuilder;
+export default GrapesjsFactorys;
