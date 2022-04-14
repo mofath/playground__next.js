@@ -17,7 +17,7 @@ export const Page = ({ data }) => {
 
 export const getServerSideProps = async pageContext => {
   const slug = pageContext.query.slug;
-  const { data } = await Axios.get(``);
+  const { data } = await Axios.get(`https://jsonplaceholder.typicode.com/todos/1`);
 
   return {
     props: {
