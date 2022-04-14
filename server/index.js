@@ -1,6 +1,8 @@
 const express = require('express');
 const next = require('next');
 const path = require('path');
+const mongoose = require('mongoose');
+
 const routes = require('./routes/index');
 
 const app = next({
@@ -12,6 +14,15 @@ const handle = app.getRequestHandler();
 
 app.prepare().then(() => {
   const server = express();
+
+  mongoose.connect(
+    'mongodb://localhost:27017/grapesjsDB',
+    { useNewUrlParser: true, useUnifiedTopology: true },
+    function (err) {
+      if (err) return console.log('Failed to connect to MongoDb', err);
+      console.log('Connected successfully to MongoDb');
+    },
+  );
 
   server.use(express.json());
   server.use(express.urlencoded({ extended: true }));
