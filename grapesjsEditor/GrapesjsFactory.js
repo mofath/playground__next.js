@@ -202,4 +202,4 @@ const GrapesjsFactory = function (options) {
   _init();
 };
 
-export default GrapesjsFactorys;
+export default GrapesjsFactory;
