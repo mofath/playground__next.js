@@ -1,6 +1,9 @@
 const config = {
-  urlStore: 'http://localhost:3000/api/uploads',
-  urlLoad: 'http://localhost:3000/api/uploads',
+  lang: 'en',
+  urlStore: 'http://localhost:3000/api/store',
+  urlLoad: 'http://localhost:3000/api/store',
+  urlFileUpload: 'http://localhost:3000/api/uploads',
+  urlGetUploads: 'http://localhost:3000/api/uploads',
 };
 
 export default config;

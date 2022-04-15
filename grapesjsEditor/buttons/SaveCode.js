@@ -5,7 +5,7 @@ export default function () {
     id: 'save',
     className: 'btn-toggle-borders',
     label: '<i class="fa fa-floppy-o" style="font-size=18px;"></i>',
-    command: editor => editor.store(),
+    command: 'save-code',
     attributes: {
       id: 'saveBtn',
       title: __('editor.save'),

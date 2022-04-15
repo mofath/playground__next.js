@@ -9,7 +9,7 @@ export default () => {
     Titles['H' + i] = {
       id: 'h' + i,
       label:
-        '<i class="far fa-h' +
+        '<i class="fa fa-h-square' +
         fakeTitle +
         ' fa-4x"></i><div>' +
         __('blocks.title') +

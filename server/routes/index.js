@@ -4,14 +4,10 @@ const fileController = require('../controllers/fileController');
 
 const router = express.Router();
 
-function routes(app) {
-  router.get('/page', pageController.storePage);
-  router.post('/page', pageController.storePage);
+router.get('/page', pageController.loadPage);
+router.post('/page', pageController.storePage);
 
-  router.get('/file', fileController.loadFile);
-  router.post('/file', fileController.storeFile);
+router.get('/file', fileController.loadFile);
+router.post('/file', fileController.storeFile);
 
-  return router;
-}
-
-module.exports = routes;
+module.exports = router;

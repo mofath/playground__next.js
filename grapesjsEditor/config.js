@@ -1,15 +1,10 @@
-let config = {
+const config = {
   lang: 'en',
-  styles: [],
-  urlStore: 'http://localhost:3000/api/store',
-  urlLoad: 'http://localhost:3000/api/store',
-  fileUpload: 'http://localhost:3000/api/upload',
-  getUploads: 'http://localhost:3000/api/upload',
+  urlStore: 'http://localhost:3000/api/page',
+  urlLoad: 'http://localhost:3000/api/page',
+  urlFileUpload: 'http://localhost:3000/api/file',
+  urlGetUploads: 'http://localhost:3000/api/file',
   textEntryOnly: false,
 };
 
-function mergeToConfig(settings) {
-  config = { ...config, ...settings };
-}
-
-export { config, mergeToConfig };
+export default config;

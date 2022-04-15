@@ -1,29 +1,36 @@
-import Axios from 'axios';
+import axios from 'axios';
 import Head from 'next/head';
-import { useRouter } from 'next/router';
 
 export const Page = ({ data }) => {
-  const router = useRouter();
+  const sanitizedData = () => ({
+    __html: data['gjs-html'],
+  });
 
   return (
     <>
       <Head>
         <meta property="description" content="description" />
       </Head>
-      <div className="page-container"></div>
+      <div className="page-container">
+        <div dangerouslySetInnerHTML={sanitizedData()} />
+        <style jsx global>
+          {`
+            ${data['gjs-css']}
+          `}
+        </style>
+      </div>
     </>
   );
 };
 
-export const getServerSideProps = async pageContext => {
-  const slug = pageContext.query.slug;
-  const { data } = await Axios.get(`https://jsonplaceholder.typicode.com/todos/1`);
-
-  return {
-    props: {
-      data,
-    },
-  };
+Page.getInitialProps = async ({ req, query, token }) => {
+  try {
+    // const slug = query.slug;
+    const { data } = await axios.get(`http://localhost:3000/api/page`);
+    return { data };
+  } catch (error) {
+    console.log(error.message);
+  }
 };
 
 export default Page;

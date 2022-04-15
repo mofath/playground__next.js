@@ -11,7 +11,7 @@ const pageSchema = new mongoose.Schema({
   },
   'gjs-css': {
     type: String,
-    required: true,
+    // required: true,
   },
   'gjs-html': {
     type: String,
@@ -22,4 +22,5 @@ const pageSchema = new mongoose.Schema({
     required: true,
   },
 });
+
 module.exports = mongoose.model('Page', pageSchema);

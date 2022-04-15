@@ -1,10 +1,10 @@
-import { config } from '../config';
+import config from '../config';
 import { __ } from '../lang/I18n';
 
 export default {
   getConfig: _ => {
     return {
-      upload: 'http://localhost:3000/api/uploads',
+      upload: config.urlFileUpload,
       headers: {
         'X-CSRF-TOKEN': 'APP.csrf_token',
       },
@@ -13,11 +13,12 @@ export default {
       modalTitle: __('assets.select_image'),
     };
   },
+
   loadFiles: editor => {
     const httpRequest = new XMLHttpRequest(),
       assetManager = editor.AssetManager;
 
-    httpRequest.open('GET', config.getUploads, true);
+    httpRequest.open('GET', config.urlGetUploads, true);
     httpRequest.setRequestHeader('X-CSRF-TOKEN', 'APP.csrf_token');
     httpRequest.send();
 

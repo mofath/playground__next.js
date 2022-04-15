@@ -1,10 +1,9 @@
-// Config
-import { config, mergeToConfig } from './config';
 // I18n
 import { __, setLocale } from './lang/I18n';
 // Libs
 import grapesjs from 'grapesjs';
 import toastr from 'toastr';
+import BasicPlugin from 'grapesjs-blocks-basic';
 // Blocks
 import ContainerBlock from './blocks/Container';
 import LineBreakBlock from './blocks/LineBreak';
@@ -21,11 +20,12 @@ import EditCodeBtn from './buttons/EditCode';
 import ExportTemplateBtn from './buttons/ExportTemplate';
 import FullScreenBtn from './buttons/FullScreen';
 import RedoBtn from './buttons/Redo';
-import SaveBtn from './buttons/Save';
+import SaveBtn from './buttons/SaveCode';
 import * as SwitchPanelsBtns from './buttons/SwitchPanels';
 import UndoBtn from './buttons/Undo';
 // Commands
 import EditCodeCmd from './commands/EditCode';
+import SaveCodeCmd from './commands/SaveCode';
 import SetDevicesCmd from './commands/SetDevices';
 import ShowPanels from './commands/ShowPanels';
 import UndoRedo from './commands/UndoRedo';
@@ -45,18 +45,19 @@ import FigureComponent from './plugins/Figure';
 import LocalizeDefaultTexts from './plugins/LocalizeDefaultTexts';
 import RichTextEditorExtended from './plugins/RichTextEditorExtended';
 import SectorsAccordion from './plugins/SectorsAccordion';
+import GrapesjsPresetWebpagePlugin from 'grapesjs-preset-webpage';
 // Types
 import LinkBlockComponent from './plugins/LinkBlock';
 import LineBreakType from './types/line-break';
 import ResponsiveVideoComponent from './plugins/ResponsiveVideo';
 import SimpleBlockType from './types/block';
 
-const GrapesjsFactory = function (options) {
+const GrapesjsFactory = function () {
   const _self = this;
   _self.editor = null;
 
   function _init() {
-    _setConfig(options);
+    _setConfig();
     _initToastr();
     _initEditor();
   }
@@ -82,13 +83,16 @@ const GrapesjsFactory = function (options) {
           FigureComponent,
           LinkBlockComponent,
           ResponsiveVideoComponent,
-          // GrapesjsPresetwebpagePlugin,
+          BasicPlugin,
         ],
-        canvas: {
-          styles: [...config.styles, '/modules/cms/css/editor/canvas.css'],
-        },
         commands: {
-          defaults: [...EditCodeCmd(), ...SetDevicesCmd, ...ShowPanels, ...UndoRedo],
+          defaults: [
+            ...EditCodeCmd(),
+            ...SaveCodeCmd(),
+            ...SetDevicesCmd,
+            ...ShowPanels,
+            ...UndoRedo,
+          ],
         },
         assetManager: AssetManager.getConfig(),
         deviceManager: {
@@ -194,9 +198,8 @@ const GrapesjsFactory = function (options) {
     };
   }
 
-  function _setConfig(options) {
-    mergeToConfig(options);
-    setLocale(config.lang);
+  function _setConfig() {
+    setLocale('en');
   }
 
   _init();

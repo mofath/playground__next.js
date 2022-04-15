@@ -27,7 +27,7 @@ app.prepare().then(() => {
   server.use(express.json());
   server.use(express.urlencoded({ extended: true }));
 
-  server.use('/api', routes(server));
+  server.use('/api', routes);
 
   server.get('*', (req, res) => {
     return handle(req, res);
