@@ -2,8 +2,7 @@ const express = require('express');
 const next = require('next');
 const path = require('path');
 const mongoose = require('mongoose');
-
-const routes = require('./routes/index');
+const { router } = require('./routes/index');
 
 const app = next({
   dir: path.join(path.dirname(__dirname), '.'),
@@ -27,7 +26,7 @@ app.prepare().then(() => {
   server.use(express.json());
   server.use(express.urlencoded({ extended: true }));
 
-  server.use('/api', routes);
+  server.use('/api', router);
 
   server.get('*', (req, res) => {
     return handle(req, res);

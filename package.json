@@ -25,6 +25,7 @@
     "grapesjs-preset-webpage": "^0.1.11",
     "grapesjs-react": "^4.0.1-alpha",
     "mongoose": "^6.2.11",
+    "multer": "^1.4.4",
     "next": "12.1.4",
     "next-i18next": "^10.5.0",
     "react": "17.0.2",
