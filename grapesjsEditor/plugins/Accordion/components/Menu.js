@@ -1,5 +1,5 @@
 export default (dc, { defaultModel, defaultView, ...config }) => {
-  const type = 'accordions';
+  const type = 'menu';
   const attrAccordions = config.attrAccordions;
 
   dc.addType(type, {
@@ -9,7 +9,7 @@ export default (dc, { defaultModel, defaultView, ...config }) => {
           ...defaultModel.prototype.defaults,
           copyable: false,
           droppable: false,
-          name: 'Accordions',
+          name: 'Menu',
           'attr-accordions': config.attrAccordions,
           'attr-accordion': config.attrAccordion,
           'attr-sub-menu': config.attrAccordionContent,

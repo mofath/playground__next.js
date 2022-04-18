@@ -1,8 +1,8 @@
 import loadComponents from './components/index';
 import loadBlocks from './blocks';
 
-const attrAccordion = 'data-accordion';
 const attrAccordions = 'data-accordions';
+const attrAccordion = 'data-accordion';
 const attrAccordionContent = 'data-sub-menu';
 const attrAccordionContainer = 'data-accordion-container';
 
@@ -12,10 +12,10 @@ export default editor => {
     attrAccordion,
     attrAccordionContent,
     attrAccordionContainer,
-    classAccordion: 'accordion',
-    classAccordionActive: 'accordion-active',
+    classAccordion: 'menu',
+    classAccordionActive: 'menu-active',
     classAccordionContent: 'sub-menu',
-    classAccordionContainer: 'accordion-container',
+    classAccordionContainer: 'menu-container',
     selectorAccordion: 'href',
     template: `
       <div ${attrAccordionContainer}>
@@ -24,7 +24,7 @@ export default editor => {
       </div>
     `,
     style: `
-      .accordion {
+      .menu {
         text-decoration: none;
         color: inherit;
         padding: 7px 14px;
