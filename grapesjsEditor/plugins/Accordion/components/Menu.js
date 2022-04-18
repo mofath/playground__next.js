@@ -10,22 +10,22 @@ export default (dc, { defaultModel, defaultView, ...config }) => {
           copyable: false,
           droppable: false,
           name: 'Menu',
-          'attr-accordions': config.attrMenu,
-          'attr-accordion': config.attrMenuItem,
+          'attr-menu': config.attrMenu,
+          'attr-menu-item': config.attrMenuItem,
           'attr-sub-menu': config.attrSubMenu,
-          'attr-accordion-container': config.attrMenuContainer,
-          'class-accordion-active': config.classAccordionActive,
-          'selector-accordion': config.selectorAccordion,
+          'attr-menu-container': config.attrMenuContainer,
+          'class-menu-active': config.classAccordionActive,
+          'selector-menu': config.selectorAccordion,
 
           script() {
             var i;
             var el = this;
-            var attrMenu = '[' + '{[ attr-accordions ]}' + ']';
-            var attrMenuItem = '[' + '{[ attr-accordion ]}' + ']';
+            var attrMenu = '[' + '{[ attr-menu ]}' + ']';
+            var attrMenuItem = '[' + '{[ attr-menu-item ]}' + ']';
             var attrSubMenu = '[' + '{[ attr-sub-menu ]}' + ']';
-            var attrMenuContainer = '[' + '{[ attr-accordion-container ]}' + ']';
-            var classAccordionActive = '{[ class-accordion-active ]}';
-            var selectorAccordion = '{[ selector-accordion ]}';
+            var attrMenuContainer = '[' + '{[ attr-menu-container ]}' + ']';
+            var classAccordionActive = '{[ class-menu-item-active ]}';
+            var selectorAccordion = '{[ selector-menu ]}';
             var body = document.body;
             var matches =
               body.matchesSelector ||
