@@ -46,11 +46,13 @@ import LocalizeDefaultTexts from './plugins/LocalizeDefaultTexts';
 import RichTextEditorExtended from './plugins/RichTextEditorExtended';
 import SectorsAccordion from './plugins/SectorsAccordion';
 import GrapesjsPresetWebpagePlugin from 'grapesjs-preset-webpage';
+import AccordionPlugin from './plugins/Accordion';
 // Types
 import LinkBlockComponent from './plugins/LinkBlock';
 import LineBreakType from './types/line-break';
 import ResponsiveVideoComponent from './plugins/ResponsiveVideo';
 import SimpleBlockType from './types/block';
+import TraitManagers from './managers/TraitManager';
 
 const GrapesjsFactory = function () {
   const _self = this;
@@ -84,6 +86,7 @@ const GrapesjsFactory = function () {
           LinkBlockComponent,
           ResponsiveVideoComponent,
           BasicPlugin,
+          // grapejsAcc,
         ],
         commands: {
           defaults: [
@@ -203,6 +206,9 @@ const GrapesjsFactory = function () {
   }
 
   _init();
+
+  AccordionPlugin(_self.editor);
+  TraitManagers(_self.editor);
 };
 
 export default GrapesjsFactory;
