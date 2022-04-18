@@ -1,9 +1,9 @@
 export default (dc, { defaultModel, defaultView, ...config }) => {
   const type = 'accordion-container';
-  const attrAccordions = config.attrAccordions;
-  const attrKey = config.attrAccordionContainer;
+  const attrMenu = config.attrMenu;
+  const attrKey = config.attrMenuContainer;
   const classKey = config.classAccordionContainer;
-  const attrAccordionContent = config.attrAccordionContent;
+  const attrSubMenu = config.attrSubMenu;
   const selectorAccordion = config.selectorAccordion;
 
   dc.addType(type, {
@@ -12,7 +12,7 @@ export default (dc, { defaultModel, defaultView, ...config }) => {
         defaults: {
           ...defaultModel.prototype.defaults,
           name: 'Accordion Container',
-          draggable: `[${attrAccordions}, ${attrAccordionContent}]`,
+          draggable: `[${attrMenu}, ${attrSubMenu}]`,
           droppable: false,
           copyable: true,
           removable: true,
@@ -33,7 +33,7 @@ export default (dc, { defaultModel, defaultView, ...config }) => {
             for (let i = componentModels.length - 1; i >= 0; i--) {
               const model = componentModels[i];
               const attrs = model.getAttributes();
-              if (attrs[`${attrAccordionContent}`]) {
+              if (attrs[`${attrSubMenu}`]) {
                 accordionContentID = model.getId();
                 model.setId(accordionContentID);
               } else {

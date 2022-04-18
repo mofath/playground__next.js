@@ -1,6 +1,6 @@
 export default (dc, { defaultModel, defaultView, ...config }) => {
   const type = 'menu';
-  const attrAccordions = config.attrAccordions;
+  const attrMenu = config.attrMenu;
 
   dc.addType(type, {
     model: defaultModel.extend(
@@ -10,20 +10,20 @@ export default (dc, { defaultModel, defaultView, ...config }) => {
           copyable: false,
           droppable: false,
           name: 'Menu',
-          'attr-accordions': config.attrAccordions,
-          'attr-accordion': config.attrAccordion,
-          'attr-sub-menu': config.attrAccordionContent,
-          'attr-accordion-container': config.attrAccordionContainer,
+          'attr-accordions': config.attrMenu,
+          'attr-accordion': config.attrMenuItem,
+          'attr-sub-menu': config.attrSubMenu,
+          'attr-accordion-container': config.attrMenuContainer,
           'class-accordion-active': config.classAccordionActive,
           'selector-accordion': config.selectorAccordion,
 
           script() {
             var i;
             var el = this;
-            var attrAccordions = '[' + '{[ attr-accordions ]}' + ']';
-            var attrAccordion = '[' + '{[ attr-accordion ]}' + ']';
-            var attrAccordionContent = '[' + '{[ attr-sub-menu ]}' + ']';
-            var attrAccordionContainer = '[' + '{[ attr-accordion-container ]}' + ']';
+            var attrMenu = '[' + '{[ attr-accordions ]}' + ']';
+            var attrMenuItem = '[' + '{[ attr-accordion ]}' + ']';
+            var attrSubMenu = '[' + '{[ attr-sub-menu ]}' + ']';
+            var attrMenuContainer = '[' + '{[ attr-accordion-container ]}' + ']';
             var classAccordionActive = '{[ class-accordion-active ]}';
             var selectorAccordion = '{[ selector-accordion ]}';
             var body = document.body;
@@ -34,7 +34,7 @@ export default (dc, { defaultModel, defaultView, ...config }) => {
               body.msMatchesSelector;
 
             var activeAccordion = accordionEl => {
-              var accordionContainers = el.querySelectorAll(attrAccordionContainer) || [];
+              var accordionContainers = el.querySelectorAll(attrMenuContainer) || [];
 
               if (accordionContainer) {
                 for (i = 0; i < accordionContainers.length; i++) {
@@ -58,7 +58,7 @@ export default (dc, { defaultModel, defaultView, ...config }) => {
 
             el.addEventListener('click', e => {
               var target = e.target;
-              if (matches.call(target, attrAccordion)) {
+              if (matches.call(target, attrMenuItem)) {
                 if (
                   el.querySelector(target.getAttribute(selectorAccordion)).style.display === 'block'
                 ) {
@@ -75,13 +75,13 @@ export default (dc, { defaultModel, defaultView, ...config }) => {
 
         init() {
           const attrs = this.getAttributes();
-          attrs[config.attrAccordions] = 1;
+          attrs[config.attrMenu] = 1;
           this.setAttributes(attrs);
         },
       },
       {
         isComponent(el) {
-          if (el.hasAttribute && el.hasAttribute(attrAccordions)) {
+          if (el.hasAttribute && el.hasAttribute(attrMenu)) {
             return { type };
           }
         },

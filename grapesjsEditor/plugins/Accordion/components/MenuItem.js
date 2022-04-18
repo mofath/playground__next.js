@@ -1,6 +1,6 @@
 export default (dc, { linkModel, linkView, ...config }) => {
   const type = 'accordion';
-  const attrKey = config.attrAccordion;
+  const attrKey = config.attrMenuItem;
   const classKey = config.classAccordion;
   const selectorAccordion = config.selectorAccordion;
 
@@ -10,7 +10,7 @@ export default (dc, { linkModel, linkView, ...config }) => {
         defaults: {
           ...linkModel.prototype.defaults,
           name: 'Accordion',
-          draggable: `[${config.attrAccordionContainer}]`,
+          draggable: `[${config.attrMenuContainer}]`,
           droppable: false,
           copyable: false,
           removable: false,

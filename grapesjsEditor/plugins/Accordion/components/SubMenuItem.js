@@ -1,6 +1,6 @@
 export default (dc, { linkModel, linkView, ...config }) => {
   const type = 'sub-menu';
-  const attrKey = config.attrAccordionContent;
+  const attrKey = config.attrSubMenu;
   const classKey = config.classAccordionContent;
 
   dc.addType(type, {
@@ -9,7 +9,7 @@ export default (dc, { linkModel, linkView, ...config }) => {
         defaults: {
           ...linkModel.prototype.defaults,
           name: 'Sube Menu',
-          draggable: `[${config.attrAccordionContainer}]`,
+          draggable: `[${config.attrMenuContainer}]`,
           copyable: false,
           removable: false,
           selectable: true,

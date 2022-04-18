@@ -1,26 +1,26 @@
 import loadComponents from './components/index';
 import loadBlocks from './blocks';
 
-const attrAccordions = 'data-accordions';
-const attrAccordion = 'data-accordion';
-const attrAccordionContent = 'data-sub-menu';
-const attrAccordionContainer = 'data-accordion-container';
+const attrMenu = 'data-accordions';
+const attrMenuItem = 'data-accordion';
+const attrSubMenu = 'data-sub-menu';
+const attrMenuContainer = 'data-accordion-container';
 
 export default editor => {
   const options = {
-    attrAccordions,
-    attrAccordion,
-    attrAccordionContent,
-    attrAccordionContainer,
+    attrMenu,
+    attrMenuItem,
+    attrSubMenu,
+    attrMenuContainer,
     classAccordion: 'menu',
     classAccordionActive: 'menu-active',
     classAccordionContent: 'sub-menu',
     classAccordionContainer: 'menu-container',
     selectorAccordion: 'href',
     template: `
-      <div ${attrAccordionContainer}>
-        <a  ${attrAccordion}>Menu 1</a>
-        <a ${attrAccordionContent}>Menu Item 1</a>
+      <div ${attrMenuContainer}>
+        <a  ${attrMenuItem}>Menu 1</a>
+        <a ${attrSubMenu}>Menu Item 1</a>
       </div>
     `,
     style: `
