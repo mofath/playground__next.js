@@ -1,10 +1,10 @@
 import loadComponents from './components/index';
 import loadBlocks from './blocks';
 
-const attrMenu = 'data-accordions';
-const attrMenuItem = 'data-accordion';
+const attrMenu = 'data-menu';
+const attrMenuItem = 'data-menu-item';
 const attrSubMenu = 'data-sub-menu';
-const attrMenuContainer = 'data-accordion-container';
+const attrMenuContainer = 'data-menu-container';
 
 export default editor => {
   const options = {
