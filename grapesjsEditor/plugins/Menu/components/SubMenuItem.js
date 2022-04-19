@@ -1,7 +1,7 @@
 export default (dc, { linkModel, linkView, ...config }) => {
   const type = 'sub-menu';
   const attrKey = config.attrSubMenu;
-  const classKey = config.classAccordionContent;
+  const classKey = config.classMenuContent;
 
   dc.addType(type, {
     model: linkModel.extend(

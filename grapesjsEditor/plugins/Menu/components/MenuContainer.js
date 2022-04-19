@@ -2,7 +2,7 @@ export default (dc, { defaultModel, defaultView, ...config }) => {
   const type = 'menu-container';
   const attrMenu = config.attrMenu;
   const attrKey = config.attrMenuContainer;
-  const classKey = config.classAccordionContainer;
+  const classKey = config.classMenuContainer;
   const attrSubMenu = config.attrSubMenu;
   const selectorAccordion = config.selectorAccordion;
 

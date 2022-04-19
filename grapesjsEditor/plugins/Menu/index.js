@@ -12,10 +12,10 @@ export default editor => {
     attrMenuItem,
     attrSubMenu,
     attrMenuContainer,
-    classAccordion: 'menu',
-    classAccordionActive: 'menu-active',
-    classAccordionContent: 'sub-menu',
-    classAccordionContainer: 'menu-container',
+    classMenu: 'menu',
+    classMenuActive: 'menu-active',
+    classMenuContent: 'sub-menu',
+    classMenuContainer: 'menu-container',
     selectorAccordion: 'href',
     template: `
       <div ${attrMenuContainer}>

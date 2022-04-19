@@ -14,7 +14,7 @@ export default (dc, { defaultModel, defaultView, ...config }) => {
           'attr-menu-item': config.attrMenuItem,
           'attr-sub-menu': config.attrSubMenu,
           'attr-menu-container': config.attrMenuContainer,
-          'class-menu-active': config.classAccordionActive,
+          'class-menu-active': config.classMenuActive,
           'selector-menu': config.selectorAccordion,
 
           script() {
@@ -24,7 +24,7 @@ export default (dc, { defaultModel, defaultView, ...config }) => {
             var attrMenuItem = '[' + '{[ attr-menu-item ]}' + ']';
             var attrSubMenu = '[' + '{[ attr-sub-menu ]}' + ']';
             var attrMenuContainer = '[' + '{[ attr-menu-container ]}' + ']';
-            var classAccordionActive = '{[ class-menu-item-active ]}';
+            var classMenuActive = '{[ class-menu-item-active ]}';
             var selectorAccordion = '{[ selector-menu ]}';
             var body = document.body;
             var matches =
@@ -39,20 +39,18 @@ export default (dc, { defaultModel, defaultView, ...config }) => {
               if (accordionContainer) {
                 for (i = 0; i < accordionContainers.length; i++) {
                   var accordionContainer = accordionContainers[i];
-                  var newClass = accordionContainer.className
-                    .replace(classAccordionActive, '')
-                    .trim();
+                  var newClass = accordionContainer.className.replace(classMenuActive, '').trim();
 
                   accordionContainer.className = newClass;
                 }
               }
 
               // hideContents();
-              accordionEl.className += ' ' + classAccordionActive;
+              accordionEl.className += ' ' + classMenuActive;
             };
 
             var deactiveAccordion = accordionEl => {
-              var newClass = accordionEl.className.replace(classAccordionActive, '').trim();
+              var newClass = accordionEl.className.replace(classMenuActive, '').trim();
               accordionEl.className = newClass;
             };
 
