@@ -2,14 +2,14 @@ export default (dc, { linkModel, linkView, ...config }) => {
   const type = 'accordion';
   const attrKey = config.attrMenuItem;
   const classKey = config.classAccordion;
-  const selectorAccordion = config.selectorAccordion;
+  const selectorMenu = config.selectorAccordion;
 
   dc.addType(type, {
     model: linkModel.extend(
       {
         defaults: {
           ...linkModel.prototype.defaults,
-          name: 'Accordion',
+          name: 'Menu',
           draggable: `[${config.attrMenuContainer}]`,
           droppable: false,
           copyable: false,
@@ -26,7 +26,7 @@ export default (dc, { linkModel, linkView, ...config }) => {
 
         clone() {
           const cloned = linkModel.prototype.clone.apply(this, arguments);
-          cloned.addAttributes({ [selectorAccordion]: '' });
+          cloned.addAttributes({ [selectorMenu]: '' });
           return cloned;
         },
       },
