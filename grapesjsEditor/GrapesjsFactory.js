@@ -44,9 +44,8 @@ import TraitManager from './managers/TraitManager';
 import FigureComponent from './plugins/Figure';
 import LocalizeDefaultTexts from './plugins/LocalizeDefaultTexts';
 import RichTextEditorExtended from './plugins/RichTextEditorExtended';
-import SectorsAccordion from './plugins/SectorsAccordion';
 import GrapesjsPresetWebpagePlugin from 'grapesjs-preset-webpage';
-import AccordionPlugin from './plugins/Accordion';
+import MenuPlugin from './plugins/Menu';
 // Types
 import LinkBlockComponent from './plugins/LinkBlock';
 import LineBreakType from './types/line-break';
@@ -78,7 +77,6 @@ const GrapesjsFactory = function () {
         storageManager: StorageManager(),
         plugins: [
           LocalizeDefaultTexts,
-          SectorsAccordion,
           RichTextEditorExtended,
           SimpleBlockType,
           LineBreakType,
@@ -207,7 +205,7 @@ const GrapesjsFactory = function () {
 
   _init();
 
-  AccordionPlugin(_self.editor);
+  MenuPlugin(_self.editor);
   TraitManagers(_self.editor);
 };
 
